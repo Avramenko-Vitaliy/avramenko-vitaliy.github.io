@@ -119,22 +119,33 @@ const Feed = React.createClass({
         this.setState({sort: {direction, columnName: column}, films: sortedFilms});
     },
 
-    render() {
+    renderTable() {
         const headers = this.createHeader();
         const rows = this.createFilmRows();
         return (
+            <table className="table table-hover">
+                <thead>
+                <tr>
+                    {headers}
+                </tr>
+                </thead>
+                <tbody>
+                {rows}
+                </tbody>
+            </table>
+        );
+    },
+
+    renderEmptyData() {
+        return  <h5 className="text-center text-muted">Data is empty. Input what you want to find.</h5>
+    },
+
+    render() {
+        const content = this.state.films.length ? this.renderTable() : this.renderEmptyData();
+        return (
             <div className="row">
                 <div className="col-md-10 col-md-offset-1">
-                    <table className="table table-hover">
-                        <thead>
-                        <tr>
-                            {headers}
-                        </tr>
-                        </thead>
-                        <tbody>
-                            {rows}
-                        </tbody>
-                    </table>
+                    {content}
                 </div>
             </div>
         );
