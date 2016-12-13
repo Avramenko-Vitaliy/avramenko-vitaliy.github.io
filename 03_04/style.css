@@ -1,0 +1,39 @@
+.card-article {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin: 15px 0;
+}
+
+.card-article:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.delete-icon {
+    display: none;
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+.card-article:hover .delete-icon {
+    display: block;
+}
+
+a {
+    cursor: pointer;
+}
+
+#title, #title:focus {
+    border: none white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#text, #text:focus {
+    border: none white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+}
+
+div blockquote {
+    border-left: none;
+}
